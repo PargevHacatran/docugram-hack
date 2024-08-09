@@ -1,0 +1,44 @@
+.chat__list {
+    position: relative;
+    display: flex;
+    padding: 10px 10px 10px 0px;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.chat__list__item {
+    display: flex;
+    column-gap: 20px;
+    padding: 5px 0 15px 35px;
+}
+
+.chat__list img {
+    width: 80px;
+    height: 80px;
+}
+
+.chat__list__item div  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 5px;
+}
+
+.chat__list__item p:nth-child(1) {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.chat__list__item p:nth-child(2) {
+    font-size: 16px;
+    font-weight: 100;
+    max-width: 220px;
+}
+
+.active__chat {
+    background-color: #E9F7F8;
+    border-left: 6px solid #329A93;
+    padding-right: 0;
+}

@@ -1,0 +1,65 @@
+.auth {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+    align-items: center;
+}
+
+.auth h1 {
+    color: #929292;
+    font-size: 48px;
+    margin: 20px 0 40px;
+}
+
+.auth input {
+    width: 700px;
+    border: 3px solid #329A93;
+    border-image-slice: 1;
+    color: #929292;
+    padding: 10px 30px;
+    font-size: 24px;
+    border-radius: 10px;
+    outline: none;
+    height: 72px;
+    background-color: transparent;
+    margin-bottom: 20px;
+
+    &::placeholder {
+        color: #929292;
+    }
+}
+
+.auth button {
+    background: #329A93;
+    border: 0;
+    outline: none;
+    padding: 10px 30px;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 10px;
+    display: block;
+    height: 72px;
+    margin: 0;
+    width: 700px;
+}
+
+.change__auth__organization {
+    display: flex;
+}
+
+.change__auth__organization button {
+    border: 0;
+    width: 350px;
+    margin-bottom: 30px;
+    box-shadow: none;
+    background-color: #E3E3E3;
+    color: #929292;
+}
+
+.active__organization {
+    background-color: #fff !important;
+    border-top: 3px solid #329A93 !important;
+}

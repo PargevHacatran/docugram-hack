@@ -1,4 +1,4 @@
 import { Chat } from "./Chat";
-import { Login } from "./Login";
+import { Auth } from "./Auth";
 
-export { Chat, Login };
+export { Chat, Auth };

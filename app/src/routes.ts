@@ -1,10 +1,10 @@
-import { Chat, Login } from "./pages";
-import { CHAT_PATH, LOGIN_PATH } from "./utils/consts";
+import { Auth, Chat } from "./pages";
+import { CHAT_PATH, AUTH_PATH } from "./utils/consts";
 
 export const publicRoutes = [
     {
-        path: LOGIN_PATH,
-        Component: Login
+        path: AUTH_PATH,
+        Component: Auth
     },
 ];
 

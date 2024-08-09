@@ -1,0 +1,21 @@
+.people__info {
+    position: relative;
+    background-color: #329A93;
+    border-radius: 10px;
+    width: 1000px;
+    padding: 10px 35px;
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.people__info img {
+    width: 80px;
+    height: 80px;
+}
+
+.people__info p {
+    font-size: 34px;
+    font-weight: 500;
+    color: #fff;
+}

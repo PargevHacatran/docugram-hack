@@ -1,4 +1,4 @@
-const LOGIN_PATH = '/login';
+const AUTH_PATH = '/login';
 const CHAT_PATH = '/chat';
 
-export { LOGIN_PATH, CHAT_PATH };
+export { AUTH_PATH, CHAT_PATH };
