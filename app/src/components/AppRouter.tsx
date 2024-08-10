@@ -23,7 +23,7 @@ export const AppRouter = () => {
     //     console.log(user);
     // }, [user]);
 
-    const user = false;
+    const user = true;
 
     return user 
         ? (
