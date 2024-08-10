@@ -6,6 +6,8 @@ import { app } from "../../main";
 
 import styles from '../../styles/blocks/messages.module.css';
 
+import { getDownloadURL, getStorage, ref } from "firebase/storage";
+
 interface Message {
     text: string;
 }
@@ -21,6 +23,26 @@ export const Messages = () => {
     const firestore = getFirestore(app);
 
     const token = 'token';
+
+    const storage = getStorage();
+
+    const download = (text:string) => {
+        getDownloadURL(ref(storage, 'token/' + text))
+            .then((url) => {
+                var element = document.createElement('a');
+                element.setAttribute('href', url);
+                element.setAttribute('download', url);
+                element.style.display = 'none';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            })
+            .catch((error) => {
+                // Handle any errors
+            });
+    }
+
+    // Переделать в хук
 
     const getMessages = async () => {
         const querySnapshot = await getDocs(collection(firestore, 'messages'));
@@ -39,22 +61,18 @@ export const Messages = () => {
         setMessages(fetchedMessages);
     }
 
-    const sendMessage = async () => {
-        setDoc(doc(firestore, 'messages', token), { messages: [...messages[0].messages, { name: name, text: message }] })
-    };
-
-    useEffect(() => console.log(), [user, messages]);
-
-    getMessages();
+    useEffect(() => {
+        getMessages()
+    }, [user, messages]);
 
     return (
         <div className={styles.messages}>
             {
                 messages ?
-                    messages[0].messages.map((item) => (
+                    messages[0].messages?.map((item: any) => (
                         <div className={`${styles.message} ${item.name === name ? styles.my__message : styles.other__message}`}>
                             <img src="./img/user-img.png" alt="" />
-                            <p>{item.text}</p>
+                            <p onClick={() => download(item.text)}>{item.text}</p>
                         </div>
                     ))
                     : null
